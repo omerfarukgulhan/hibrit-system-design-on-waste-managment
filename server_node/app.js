@@ -8,7 +8,8 @@ const port = 5000;
 
 app.use(cors());
 
-const mongoURI = "mongodb+srv://omerfarukgulhan:153515@general.bwntdog.mongodb.net/?retryWrites=true&w=majority&appName=general";
+const mongoURI =
+  "mongodb+srv://omerfarukgulhan:153515@general.bwntdog.mongodb.net/?retryWrites=true&w=majority&appName=general";
 
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
