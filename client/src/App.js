@@ -1,20 +1,35 @@
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import data from "./data.json";
+import initialData from "./data.json";
+import axios from "axios";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibGVyaXRoIiwiYSI6ImNsdnIyZmh6cDBnZXYya21oZGFxendvcWsifQ.Qhm_zr1bKU_Jkuk8HSr80w";
 
 export default function App() {
+  const [data, setData] = useState(initialData);
   const [index, setIndex] = useState(0);
   const mapContainer = useRef(null);
   const [start, setStart] = useState([data[0].bin_lat, data[0].bin_lng]);
   const [end, setEnd] = useState([data[1].bin_lat, data[1].bin_lng]);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/");
+        setData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
     setStart([data[index].bin_lat, data[index].bin_lng]);
     setEnd([data[index + 1].bin_lat, data[index + 1].bin_lng]);
-  }, [index]);
+  }, [index, data]);
 
   useEffect(() => {
     if (!mapContainer.current) return;
