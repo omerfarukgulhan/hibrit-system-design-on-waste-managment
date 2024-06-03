@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const routes = require("./routes/binRoute");
 
 const app = express();
 const port = 5000;
@@ -15,8 +16,6 @@ mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected"))
   .catch((err) => console.error("Err: ", err));
-
-const routes = require("./routes/binRoute");
 
 app.use("/", routes);
 

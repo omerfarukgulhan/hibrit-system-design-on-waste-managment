@@ -1,27 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
 const axios = require("axios");
-const Bin = require("../models/binModel"); // Ensure this path is correct
+const Bin = require("../models/binModel");
 
-const mongoURI =
-  "mongodb+srv://omerfarukgulhan:153515@general.bwntdog.mongodb.net/?retryWrites=true&w=majority&appName=general";
 const token =
   "pk.eyJ1IjoibGVyaXRoIiwiYSI6ImNsdnIyZmh6cDBnZXYya21oZGFxendvcWsifQ.Qhm_zr1bKU_Jkuk8HSr80w";
-
-mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("Error: ", err));
-
-async function fetchBins() {
-  try {
-    const bins = await Bin.find({ is_full: 1 });
-    return bins;
-  } catch (error) {
-    console.error("Error fetching bins: ", error);
-    return [];
-  }
-}
 
 async function calculateGraph(dataList) {
   const directionsList = [];

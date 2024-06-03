@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const binSchema = new mongoose.Schema({
+  id: Number,
   bin_lng: Number,
   bin_lat: Number,
   bin_location_str: String,
