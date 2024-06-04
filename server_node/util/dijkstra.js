@@ -73,7 +73,7 @@ async function main(bins, nodes) {
     }
 
     const uniqueRoute = [...new Set(route)];
-    console.log("Yol: " + uniqueRoute.join(" -> "));
+    console.log("Path: " + uniqueRoute.join(" -> "));
 
     return uniqueRoute;
   } else {
