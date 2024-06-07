@@ -16,7 +16,7 @@ app = Flask(__name__)
 CORS(app,origins=ALLOWED_ORIGIN)
 
 
-uri = "mongodb+srv://omerfarukgulhan:<password>@w1.fwf7hkt.mongodb.net/?retryWrites=true&w=majority&appName=w1"
+uri = "mongodb+srv://<username>:<password>@w1.fwf7hkt.mongodb.net/?retryWrites=true&w=majority&appName=w1"
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
 # Send a ping to confirm a successful connection

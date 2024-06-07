@@ -1,8 +1,7 @@
 const axios = require("axios");
 const Bin = require("../models/binModel");
 
-const token =
-  "pk.eyJ1IjoibGVyaXRoIiwiYSI6ImNsdnIyZmh6cDBnZXYya21oZGFxendvcWsifQ.Qhm_zr1bKU_Jkuk8HSr80w";
+const token = "api key";
 
 async function calculateGraph(dataList) {
   const directionsList = [];

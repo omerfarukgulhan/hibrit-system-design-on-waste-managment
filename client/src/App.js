@@ -4,7 +4,7 @@ import initialData from "./data.json";
 import axios from "axios";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoibGVyaXRoIiwiYSI6ImNsdnIyZmh6cDBnZXYya21oZGFxendvcWsifQ.Qhm_zr1bKU_Jkuk8HSr80w";
+  "api key";
 
 export default function App() {
   const [data, setData] = useState(initialData);

@@ -10,7 +10,7 @@ import numpy as np
 from sklearn.metrics import mean_squared_error, r2_score
 import pymongo
 
-client = pymongo.MongoClient("mongodb+srv://omerfarukgulhan:153515@general.bwntdog.mongodb.net/?retryWrites=true&w=majority&appName=general")
+client = pymongo.MongoClient(  "mongodb+srv://<username>:<password>@general.bwntdog.mongodb.net/?retryWrites=true&w=majority&appName=general")
 db = client["test"]
 collection = db["bins"]
 

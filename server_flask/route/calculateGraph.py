@@ -2,7 +2,7 @@ import requests
 from app import convertBins
 
 
-token = "pk.eyJ1IjoibGVyaXRoIiwiYSI6ImNsdnIyZmh6cDBnZXYya21oZGFxendvcWsifQ.Qhm_zr1bKU_Jkuk8HSr80w"
+token = "api key"
 
 
 def calculateGraph(data_list):
